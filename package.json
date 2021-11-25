@@ -1,13 +1,21 @@
 {
-  "name": "webshop",
+  "name": "fruit-bowl",
   "version": "1.0.0",
-  "description": "A first setup of your webshop project",
+  "description": "My First Webshop",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gorilla-projects/1-webshop.git"
+  },
   "author": "Toby Versteeg",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gorilla-projects/1-webshop/issues"
+  },
+  "homepage": "https://github.com/gorilla-projects/1-webshop#readme",
   "dependencies": {
     "bootstrap": "^5.1.3"
   }
