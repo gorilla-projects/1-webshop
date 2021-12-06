@@ -1,31 +1,46 @@
+// Get all cols with class gallery_product to get access to all pictures
 let galleryProducts = document.querySelectorAll('.gallery_product');
+
+// Get all buttons that filter pictures
 let filterButton = document.querySelectorAll('.filter-button');
+
+// Get the filter button to restore filters to all
 let filterAll = document.querySelector('#filter-all');
 
+// Add event to the 'restore filters to all' button
 filterAll.addEventListener('click', function () {
+    // remember the filter that user clicked on
     localStorage.removeItem('catFilter');
 
+    // Show all pictures because we've clicked on the 'All' button
     galleryProducts.forEach(photo => {
         photo.style.display = 'block';
     });
 });
 
+// Check if we memorized a filter
 let catFilter = localStorage.getItem('catFilter');
 
+// If we memorized a filter in local storage, than set this filter to all pictures
 if (catFilter !== null) {
     updateFilter(catFilter);
 }
 
+// Set a 'click' event listner on all filter buttons
 filterButton.forEach(button => {
     button.addEventListener('click', function () {
+        // Get the 'category' attribure from the button
         let categoryFromButton = this.getAttribute('category');
 
+        // Memorize this filter
         localStorage.setItem('catFilter', categoryFromButton);
 
+        // Update visiblilty on all pictures
         updateFilter(categoryFromButton);
     });
 });
 
+// Function to set filters
 function updateFilter(categoryToShow) {
     galleryProducts.forEach(photo => {
         
