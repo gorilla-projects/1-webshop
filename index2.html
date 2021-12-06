@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Webshop 1</title>
+
+    <link rel="icon" href="/assets/images/cg-favicon.png" sizes="32x32">
+
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/buttons.css">
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <header>
+            <div class="basket" id="cart"></div>
+        </header>
+
+        <button class="unfiltered" id="filter-all">All</button>
+
+        <button class="filter-button" category="portraits">Portraits</button>
+        <button class="filter-button" category="nudes">Nudes</button>
+        <button class="filter-button" category="location">Location</button>
+
+        <section class="content">
+            <div class="container">
+                <div class="row mt-3 mb-3">
+                    <div class="col-md-4 border gallery_product" category="portraits">
+                        <div class="card mb-5">
+                            <img src="/assets/images/webshop/apples.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <button product_id="0" class="btn btn-primary add-to-cart">Order</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 border gallery_product" category="nudes">
+                        <div class="card mb-4">
+                            <img src="/assets/images/webshop/avacados.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <button product_id="1" class="btn btn-primary add-to-cart">Order</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 border gallery_product" category="nudes">
+                        <div class="card mb-3">
+                            <img src="/assets/images/webshop/strawberries.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <button product_id="2" class="btn btn-primary add-to-cart">Order</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 border">
+                        col 4
+                    </div>
+
+                    <div class="col-md-4 border">
+                        col 5
+                    </div>
+
+                    <div class="col-md-4 border">
+                        col 6
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+
+        </footer>
+    </div>
+
+    <script src="assets/js/fruits.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

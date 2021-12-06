@@ -1,38 +1,82 @@
-let fruits = [
-    {
-        image: 'apples.jpeg',
-        name: 'Apples',
-        color: 'yellow',
-        stock: 20,
-    },
+let galleryProducts = document.querySelectorAll('.gallery_product');
 
-    {
-        image: 'avocados.jpg',
-        name: 'Avocado\s',
-        color: 'green',
-        stock: 10,
-    },
+let filterButton = document.querySelectorAll('.filter-button');
+let filterAll = document.querySelector('#filter-all');
 
-    {
-        image: 'bananas.jpg',
-        name: 'Banana',
-        color: 'green',
-        stock: 100,
-    },
-];
+filterAll.addEventListener('click', function () {
+    galleryProducts.forEach(photo => {
+        photo.style.display = 'block';
+    });
+});
 
-function fruitBowl(favorite) {
-    for(let i = 0; i < fruits.length; i++) {
-        console.log(fruits[i].name, i)
-    }
+filterButton.forEach(button => {
+    button.addEventListener('click', function () {
+        // attribute from button
+        let categoryFromButton = this.getAttribute('category');
 
-    fruits.forEach(fruit => {
-        console.log(fruit)
-    })
+        galleryProducts.forEach(photo => {
+            // attribute form picture
+            if (photo.getAttribute('category') == categoryFromButton) {
+                photo.style.display = 'block';
+            } else {
+                photo.style.display = 'none';
+            }
+        });
+    });
+});
 
-    let countOfLoops = 120;
 
-    console.log('end of while loop')
-}
 
-fruitBowl();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// This is shopping cart
+// let cart = []
+
+// let addButton = document.querySelectorAll('.add-to-card')
+
+// let shoppingBasket = document.querySelector('#shopping-cart')
+// let emptyBasket = document.querySelector('#btn-empty-basket')
+
+// addButton.forEach(function(btn, index) {
+//     btn.addEventListener('click', function() {
+//         let p_id = this.getAttribute('product_id')
+
+//         updateBasket(p_id)
+//     })
+// })
+
+// localStorage.removeItem('cart');
+
+// /**
+//  * This function updates the shopping cart
+//  * @param {Number} p_id represents product ID from database
+//  * @return something
+//  */
+// function updateBasket(p_id) {
+//     cart.push(fruits[p_id])
+
+//     localStorage.setItem('cart', JSON.stringify(cart));
+// }
