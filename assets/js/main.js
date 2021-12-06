@@ -1,29 +1,41 @@
 let galleryProducts = document.querySelectorAll('.gallery_product');
-
 let filterButton = document.querySelectorAll('.filter-button');
 let filterAll = document.querySelector('#filter-all');
 
 filterAll.addEventListener('click', function () {
+    localStorage.removeItem('catFilter');
+
     galleryProducts.forEach(photo => {
         photo.style.display = 'block';
     });
 });
 
+let catFilter = localStorage.getItem('catFilter');
+
+if (catFilter !== null) {
+    updateFilter(catFilter);
+}
+
 filterButton.forEach(button => {
     button.addEventListener('click', function () {
-        // attribute from button
         let categoryFromButton = this.getAttribute('category');
 
-        galleryProducts.forEach(photo => {
-            // attribute form picture
-            if (photo.getAttribute('category') == categoryFromButton) {
-                photo.style.display = 'block';
-            } else {
-                photo.style.display = 'none';
-            }
-        });
+        localStorage.setItem('catFilter', categoryFromButton);
+
+        updateFilter(categoryFromButton);
     });
 });
+
+function updateFilter(categoryToShow) {
+    galleryProducts.forEach(photo => {
+        
+        if (photo.getAttribute('category') == categoryToShow) {
+            photo.style.display = 'block';
+        } else {
+            photo.style.display = 'none';
+        }
+    });
+}
 
 
 
